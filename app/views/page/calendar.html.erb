@@ -3,6 +3,10 @@
 
 <p><%= @name + ' ' + @my_time.to_s %></p>
 
+<p><b><%= @year + '/' + @month %> products</b></p>
+
+<%= calendar(@month, @year) %>
+
 <ul>
 <% @products.each do |product| %>
     <li><%= product.capitalize %></li>
