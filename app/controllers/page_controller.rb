@@ -12,6 +12,9 @@ class PageController < ApplicationController
   end
 
   def calendar
+    @name = "Lino Espinoza"
+    @my_time = Time.now
+    @products = %w(Skiis boots poles mittens) # = ["Skiis", "boots", "poles", "mittens"]
   end
 
   def blog

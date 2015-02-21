@@ -1,2 +1,10 @@
 <h1>Page#calendar</h1>
 <p>Find me in app/views/page/calendar.html.erb</p>
+
+<p><%= @name + ' ' + @my_time.to_s %></p>
+
+<ul>
+<% @products.each do |product| %>
+    <li><%= product.capitalize %></li>
+<% end %>
+</ul>
