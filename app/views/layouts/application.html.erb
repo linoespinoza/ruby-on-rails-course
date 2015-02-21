@@ -14,12 +14,13 @@
   <nav><!-- top nav -->
     <div class="menu">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Support</a></li>
-        <li><a href="#">Contact Us</a></li>
+        <li><%= link_to_unless_current "Home", page_home_path %></li>
+        <li><%= link_to_unless_current "About Us", page_about_us_path %></li>
+        <li><%= link_to_unless_current "Recipes", page_recipes_path %></li>
+        <li><%= link_to_unless_current "Products", page_products_path %></li>
+        <li><%= link_to_unless_current "Calendar", page_calendar_path %></li>
+        <li><%= link_to_unless_current "Blog", page_blog_path %></li>
+        <li><%= link_to_unless_current "Login", page_login_path %></li>
       </ul>
     </div>
   </nav><!-- end of top nav -->

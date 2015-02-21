@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  
+  get 'page/home'
+  get 'page/about_us'
+  get 'page/recipes'
+  get 'page/products'
+  get 'page/calendar'
+  get 'page/blog'
+  get 'page/login'
+
+  root 'page#home'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
