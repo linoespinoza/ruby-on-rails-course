@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   get 'page/about_us'
   get 'page/recipes'
   get 'page/products'
-  get 'page/calendar'
+  #get 'page/calendar'
   get 'page/blog'
   get 'page/login'
 
   root 'page#home'
+  get 'page/calendar(/:year(/:month))' => 'page#calendar', as: :page_calendar
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
