@@ -1,5 +1,15 @@
 module ApplicationHelper
 
+  def things_to_do(links)
+    # key = URL, value = body
+    html = "<ul>\n"
+    links.each do |url, body|
+      html += "\t<li>" + link_to(body, url)+ "</li>\n"
+    end
+    html += "</ul>\n"
+    return html.html_safe
+  end
+
   def calendar(month, year)
     prev_month = link_to "Previous", page_calendar_path(:month => month.to_i - 1, :year => year) 
     cal_str = "<table border='1'>"
