@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   get 'page/home'
   get 'page/about_us'
+  post 'page/about_us'
   get 'page/recipes'
   get 'page/products'
   #get 'page/calendar'

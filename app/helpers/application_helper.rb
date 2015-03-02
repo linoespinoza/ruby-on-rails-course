@@ -1,5 +1,14 @@
 module ApplicationHelper
 
+  def show_params()
+    html = "<div><code>"
+    params.each do |key, value|
+      html += "#{key}: #{value} <br/> "
+    end
+    html += "</code></div>"
+    return html.html_safe
+  end
+
   def things_to_do(links)
     # key = URL, value = body
     html = "<ul>\n"
