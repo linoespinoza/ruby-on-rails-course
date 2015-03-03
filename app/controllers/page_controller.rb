@@ -1,4 +1,7 @@
 class PageController < ApplicationController
+  
+  before_action :setup
+
   def home
   end
 
@@ -6,12 +9,14 @@ class PageController < ApplicationController
     @name = params[:name]
     @email = params[:email]
     @age = params[:age]
+    @comments = params[:comments]
   end
 
   def recipes
   end
 
   def products
+    @products = ['skiis' => 199.99 ]
   end
 
   def calendar
@@ -26,5 +31,9 @@ class PageController < ApplicationController
   end
 
   def login
+  end
+
+  def setup
+    @products = %w(Skiis boots poles mittens mask hat mask)
   end
 end

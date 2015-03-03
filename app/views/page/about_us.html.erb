@@ -7,27 +7,33 @@
 <%= form_tag do %>
   <%= field_set_tag 'Information' do %>
     <p>
-      <%= label_tag 'Name: ' %>
-      <%= text_field_tag 'name', @name, class: 'input', placeholder: 'Enter a name', size: 64 %>
+      <%= label_tag 'name', 'Name:' %>
+      <%= text_field_tag 'name', @name, class: 'input', placeholder: 'Enter a name', size: 50 %>
     </p>
 
     <p>
-      <%= label_tag 'Email Address: ' %>
+      <%= label_tag 'email', 'Email Address:' %>
       <%= email_field_tag 'email', @email, placeholder: 'Enter an email', size: 64 %>
     </p>
 
     <p>
-      <%= label_tag 'Age: ' %>
+      <%= label_tag 'age', 'Age:' %>
       <%= number_field_tag 'age', @age, placeholder: 'Enter your age', min: 10, max: 20 %>
     </p>
  
     <p>
-      <%= label_tag 'Comments: ' %>
-      <%= text_area_tag 'Comments: '%>
+      <%= label_tag 'comments', 'Comments:' %>
+      <%= text_area_tag 'comments' %>
     </p>
 
     <p><%= submit_tag 'Submit your question' %></p>
   <% end %>
 <% end %>
 
-<%= show_params %>
+<% @products.each do |key, value| %>
+  Key: <%= key %>
+<% end %>
+
+<% if params[:commit] != nil %>
+  <%= show_params %>
+<% end %>

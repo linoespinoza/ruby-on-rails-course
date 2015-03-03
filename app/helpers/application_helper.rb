@@ -1,9 +1,10 @@
 module ApplicationHelper
 
   def show_params()
-    html = "<div><code>"
+    html = "<div>"
+    html += "<h1>Params</h1><code>"
     params.each do |key, value|
-      html += "#{key}: #{value} <br/> "
+      html += "#{key}: #{value}<br/>" if(key != 'authenticity_token' && key != 'utf8')
     end
     html += "</code></div>"
     return html.html_safe
