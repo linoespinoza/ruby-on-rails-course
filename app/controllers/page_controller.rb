@@ -34,6 +34,6 @@ class PageController < ApplicationController
   end
 
   def setup
-    @products = %w(Skiis boots poles mittens mask hat mask)
+    @products = { 1 => 'Skiis', 2 => 'boots', 3 => 'poles', 4 => 'mittens' , 5 => 'mask', 6 => 'hat', 7 => 'mask' }
   end
 end
