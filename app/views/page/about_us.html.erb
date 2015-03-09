@@ -22,13 +22,25 @@
     </p>
 
     <p>
-      <%= label_tag 'count', 'Count:' %>
-      <%= select_tag 'count', options_for_select([["Skiss", "1"], ["Poles", "1"], ["Mittens", "3"]]) %>
+      <%= label_tag 'product', 'product:' %>
+      <%#= select_tag 'product', options_for_select( @products.map { |value| [value, value]}, @selected_product) %>
+      <%= select_tag 'product', options_for_select( @products, @selected_product) %>
     </p>
  
     <p>
+      <%= label_tag 'food_salad', 'Salad' %>
+      <%= radio_button_tag 'food', 'salad', @food == 'salad' %>
+
+      <%= label_tag 'food_main', 'Main' %>
+      <%= radio_button_tag 'food', 'main', @food == 'main' %>
+
+      <%= label_tag 'food_dessert', 'Dessert' %>
+      <%= radio_button_tag 'food', 'dessert', @food == 'dessert' %>
+    </p>
+
+    <p>
       <%= label_tag 'comments', 'Comments:' %>
-      <%= text_area_tag 'comments' %>
+      <%= text_area_tag 'comments', @comments %>
     </p>
 
     <p><%= submit_tag 'Submit your question' %></p>

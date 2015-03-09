@@ -6,10 +6,25 @@ class PageController < ApplicationController
   end
 
   def about_us
+    # flash[:notice] = "Hey, Dave, you can't do that"
     @name = params[:name]
     @email = params[:email]
+
+    if params[:commit]
+      flash.now[:error] = ""
+      if @name.nil? || @name.empty?
+        flash.now[:error] << "Name cannot be blank. <br />"
+      end
+      if @email.nil? || @email.empty?
+        flash.now[:error] << "Email cannot be blank. <br />"
+      end
+    end
+    
     @age = params[:age]
     @comments = params[:comments]
+    @products = %w(Skiis poles mittens)
+    @selected_product = params[:count]
+    @food = params[:food]
   end
 
   def recipes

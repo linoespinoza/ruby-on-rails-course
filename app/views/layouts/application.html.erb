@@ -22,6 +22,14 @@
 
   <section id="main"><!-- #main content and sidebar area -->
     <section id="content"><!-- #content -->
+        <div style="border: 1px solid red">
+          <% if flash[:notice] %>
+            <p class="notice"><%= flash[:notice].html_safe %></p>
+          <% end %>
+          <% if flash[:error] %>
+            <p class="error"><%= flash[:error].html_safe %></p>
+          <% end %>
+        </div>
         <%= yield %>
     </section><!-- end of #content -->
 
