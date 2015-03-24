@@ -1,2 +1,12 @@
 <h1>Page#recipes</h1>
 <p>Find me in app/views/page/recipes.html.erb</p>
+
+<% @recipes.each do |recipe| %>
+    <section>
+        <heading><%= recipe.name %></heading>
+        Made by: <%= recipe.made_by %><br />
+        Serves: <%= recipe.serves %><br />
+        Last_made: <%= recipe.last_made %><br />
+    </section>
+<% end %>
+
